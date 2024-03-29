@@ -27,11 +27,11 @@ export default function MidArea() {
                     </button>
                   </div>
                   {midAreaList.map((x, i) => {
-                    let str = `${x}`;
+                    let componentKey = `${x}`;
                     return (
                       <Draggable
-                        key={`${str}--${i}`}
-                        draggableId={`${str}--${i}`}
+                        key={`${componentKey}-${i}`}
+                        draggableId={`${componentKey}-${i}`}
                         index={i}
                       >
                         {(provided) => (
@@ -41,7 +41,7 @@ export default function MidArea() {
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                           >
-                            {getComponent(str)}
+                            {getComponent(componentKey)}
                             {provided.placeholder}
                           </li>
                         )}
