@@ -1,10 +1,13 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Draggable, Droppable } from "react-beautiful-dnd";
 import { getComponent } from "./getComponents";
 import { motionComponents, looksComponents } from "./Slidebarconst";
 
 export default function MidArea() {
-  const [midAreaList, setmidAreaList] = useState(["MOVE_Y","MOVE"]);
+  const [midAreaList, setmidAreaList] = useState([]);
+  const runTask = ()=>{
+    if (midAreaList.length==0 ) alert("Need at least one Task")
+  }
   return (
     <div className="flex-1 h-full overflow-auto">
       <div className="text-center m-2">
@@ -19,7 +22,9 @@ export default function MidArea() {
                   ref={provided.innerRef}
                 >
                   <div>
-                    <button>Run Task</button>
+                    <button onClick={runTask} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                      Run Task
+                    </button>
                   </div>
                   {midAreaList.map((x, i) => {
                     let str = `${x}`;
@@ -30,7 +35,8 @@ export default function MidArea() {
                         index={i}
                       >
                         {(provided) => (
-                          <li className="m-2 border-2 p-2 bg-blue-500"
+                          <li
+                            className="m-2 border-2 p-2 bg-blue-500"
                             ref={provided.innerRef}
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
