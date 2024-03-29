@@ -6,14 +6,15 @@ const Move = ({ comp_id }) => {
   const handleClick = () => {
     setStepInX((prev) => prev + 15);
     const element = document.getElementById("catSprite");
+    console.log(element)
     element.style.position = "relative";
     element.style.left = stepInX + "px";
   };
 
   return (
-    <div className="cursor-pointer" onClick={handleClick}>
+    <div className="w-full cursor-pointer p-2 text-center" onClick={handleClick}>
       Move
-      <span className="bg-white text-black rounded-full m-1"> 15 </span> Step in
+      <span className="bg-white text-black rounded-full m-1 text-center"> 15 </span> Step in
       X{" "}
     </div>
   );

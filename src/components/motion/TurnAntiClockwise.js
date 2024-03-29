@@ -3,7 +3,7 @@ const TurnAntiClockWise = ({comp_id}) => {
   const [angle, setAngle] = useState(0);
   const handleClick =  ()=>{
     if(!angle) return
-    const element = document.getElementById("catSprite");
+    const element = document.getElementById("cat");
     console.log(angle,element)
     element.style.transform = `rotate(${-1*angle}deg)`;
   }

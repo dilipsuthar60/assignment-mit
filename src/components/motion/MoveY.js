@@ -10,8 +10,11 @@ const MoveY = ({comp_id}) => {
   }
   
   return (
-    <div className="cursor-pointer" onClick={handleClick}>Move 
-    <span className="bg-white text-black rounded-full m-1"> 15 </span> Step in Y </div>
+    <div className="w-full cursor-pointer p-2 text-center" onClick={handleClick}>
+      Move
+      <span className="bg-white text-black rounded-full m-1 text-center"> 15 </span> Step in
+      Y{" "}
+    </div>
   );
 };
 

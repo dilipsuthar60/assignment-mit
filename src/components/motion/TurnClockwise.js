@@ -4,7 +4,7 @@ const TurnClockWise = ({comp_id}) => {
 
   const handleClick =  ()=>{
     if(!angle) return
-    const element = document.getElementById("catSprite");
+    const element = document.getElementById("cat");
     console.log(angle,element)
     element.style.transform = `rotate(${angle}deg)`;
   }

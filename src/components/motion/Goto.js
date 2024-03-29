@@ -17,7 +17,7 @@ const GotoXY = ({comp_id}) => {
   return (
     <div className="text-center rounded bg-blue-500  p-2 my-3">
         <div className="grid grid-cols-2 my-2">
-          <div className="text-white"> X</div>
+          <div className="text-white text-sm font-semibold"> X</div>
           <input
             className="mx-2 p-1 py-0 text-center text-black"
             type="number"
@@ -29,7 +29,7 @@ const GotoXY = ({comp_id}) => {
           />
         </div>
         <div className="grid grid-cols-2 my-2">
-          <div className="text-white">Y</div>
+          <div className="text-white text-sm font-semibold">Y</div>
           <input
             className="mx-2 p-1 py-0 text-center text-black"
             type="number"
@@ -42,10 +42,12 @@ const GotoXY = ({comp_id}) => {
         </div>
         <div
           id={comp_id}
-          className="text-center bg-red-600 text-black px-2 py-1 my-2 text-sm cursor-pointer"
+          className="flex bg-red-600 text-white px-2 py-1 mt-3 mb-1 text-sm cursor-pointer"
           onClick={() => gotoXY()}
         >
+          <div className="flex mx-auto">
           Go to X : {state.goto_x} Y : {state.goto_y}
+          </div>
         </div>
       </div>
   );
