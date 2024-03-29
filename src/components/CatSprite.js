@@ -1,7 +1,9 @@
 import React from "react";
+import "../index.css";
 
 export default function CatSprite() {
   return (
+    <div id="catSprite" className="inline-block z-0 catSprite" >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="95.17898101806641"
@@ -180,5 +182,6 @@ export default function CatSprite() {
         </g>
       </g>
     </svg>
+    </div>
   );
 }
