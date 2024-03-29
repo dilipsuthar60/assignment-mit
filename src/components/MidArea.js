@@ -3,30 +3,32 @@ import { Draggable, Droppable } from "react-beautiful-dnd";
 import { getComponent } from "./getComponents";
 import { motionComponents, looksComponents } from "./Slidebarconst";
 
-export default function MidArea() {
-  const [midAreaList, setmidAreaList] = useState([]);
+export default function MidArea({midAreaTaskList}) {
+  // const [midAreaList, setmidAreaList] = useState([]);
+  console.log(midAreaTaskList)
   const runTask = ()=>{
-    if (midAreaList.length==0 ) alert("Need at least one Task")
+    console.log(midAreaTaskList)
+    if (midAreaTaskList.length==0 ) alert("Need at least one Task")
   }
   return (
     <div className="flex-1 h-full overflow-auto">
       <div className="text-center m-2">
         <span className="bg-slate-400">Mid Area</span>
-        <div className="w-52 p-2 text-center rounded bg-red-500 p-2 my-3">
+        <div className="w-60 p-2 text-center rounded bg-red-500 p-2 my-3">
           <Droppable droppableId="mid-area" type="COMPONENTS">
             {(provided) => {
               return (
                 <ul
-                  className={`w-48 h-full`}
+                  className={`w-58 h-full`}
                   {...provided.droppableProps}
                   ref={provided.innerRef}
                 >
-                  <div>
+                  <div className="text-center">
                     <button onClick={runTask} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                       Run Task
                     </button>
                   </div>
-                  {midAreaList.map((x, i) => {
+                  {midAreaTaskList.map((x, i) => {
                     let componentKey = `${x}`;
                     return (
                       <Draggable
