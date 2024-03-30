@@ -7,8 +7,10 @@ export const motionComponents = [
   ];
   
   export const looksComponents = [
-    "THINK_TIMER",
     "SAY_MESSAGE",
-    "THINK",
-    "SAY_MESSAGE_WITH_TIMER",
+    "SAY_HELLO_MESSAGE_2_SECOND"
   ];
+
+      // "THINK_TIMER",
+    // "THINK",
+    // "SAY_MESSAGE_WITH_TIMER",

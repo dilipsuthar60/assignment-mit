@@ -9,9 +9,9 @@ export default function PreviewArea() {
       <div className="absolute">
         <div id="message-and-catsprite-box">
           <div
-            className="hidden border-2 p-2 ml-3 mb-2 w-auto whitespace-nowrap"
+            className="hidden border-2 p-1 ml-3 mb-1 w-auto whitespace-nowrap"
             id="message-box"
-          >uhu</div>
+          ></div>
           <div
             className="hidden rounded-full border-2 w-4 left-1/2 h-4 ml-3 mb-2 whitespace-nowrap"
             id="message-box-1"

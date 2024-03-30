@@ -3,6 +3,7 @@ import Icon from "./Icon";
 import { Draggable, Droppable } from "react-beautiful-dnd";
 import { getComponent } from "./getComponents";
 import {
+  looksComponents,
   motionComponents,
 } from "./Slidebarconst";
 
@@ -18,6 +19,39 @@ export default function Sidebar() {
             ref={provided.innerRef}
           >
             {motionComponents.map((x, i) => {
+              return (
+                <Draggable
+                  key={`${x}-sideArea`}
+                  draggableId={`${x}-sideArea`}
+                  index={i}
+                >
+                  {(provided) => (
+                    <li
+                      ref={provided.innerRef}
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                      className="flex flex-row flex-wrap bg-blue-500 text-white px-2 py-1 my-2 text-sm cursor-pointer"
+                    >
+                      {getComponent(x)}
+                    </li>
+                  )}
+                </Draggable>
+              );
+            })}
+            {provided.placeholder}
+          </ul>
+        )}
+      </Droppable>
+
+      <div className="font-bold"> {"Look"} </div>
+      <Droppable droppableId="sideArea-look" type="COMPONENTS">
+        {(provided) => (
+          <ul
+            className="my-3 w-full "
+            {...provided.droppableProps}
+            ref={provided.innerRef}
+          >
+            {looksComponents.map((x, i) => {
               return (
                 <Draggable
                   key={`${x}-sideArea`}
