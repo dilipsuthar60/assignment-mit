@@ -2,12 +2,10 @@ import React, { useState } from "react";
 
 const SayMessage = ({ comp_id }) => {
   const displayMessage = () => {
-    const el = document.getElementById("message-box");
-    const el2 = document.getElementById("message-box-1");
-    console.log(el, el2);
-    el.style.display = "block";
-    el.style.position = "relative";
-    el.innerHTML = "hello";
+    const element = document.getElementById("message-box");
+    element.style.display = "block";
+    element.style.position = "relative";
+    element.innerHTML = "hello";
   };
   return (
         <div
