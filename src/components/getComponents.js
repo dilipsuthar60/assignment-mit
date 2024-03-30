@@ -10,22 +10,22 @@ import SayMessageInTime from "./look/SayMessageInTime";
 export const getComponent = (key, id) => {
   switch (key) {
     case "MOVE_Y":
-      return <MoveY comp_id={id} />;
+      return <MoveY componentId={id} />;
     case "MOVE":
-      return <Move comp_id={id} />;
+      return <Move componentId={id} />;
 
     case "TURN_CLOCKWISE":
-      return <TurnClockwise comp_id={id} />;
+      return <TurnClockwise componentId={id} />;
 
     case "TURN_ANTI_CLOCKWISE":
-      return <TurnAntiClockwise comp_id={id} />;
+      return <TurnAntiClockwise componentId={id} />;
 
     case "GOTO_XY":
-      return <GotoXY comp_id={id} />;
+      return <GotoXY componentId={id} />;
     case "SAY_MESSAGE":
-      return <SayMessage comp_id={id}/>
+      return <SayMessage componentId={id}/>
     case "SAY_HELLO_MESSAGE_2_SECOND":
-      return <SayMessageInTime comp_id={id}/>    
+      return <SayMessageInTime componentId={id}/>    
     default:
       return React.null;
   }

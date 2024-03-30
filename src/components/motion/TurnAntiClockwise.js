@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-const TurnAntiClockWise = ({comp_id}) => {
+const TurnAntiClockWise = ({componentId}) => {
   const [angle, setAngle] = useState(0);
   const handleClick =  ()=>{
     if(!angle) return
@@ -21,7 +21,7 @@ const TurnAntiClockWise = ({comp_id}) => {
       />
     </div>
     <div
-      id={comp_id}
+      id={componentId}
       className={`flex bg-red-600 text-white px-2 py-1 mt-3 mb-1 text-sm cursor-pointer`}
       onClick={() => handleClick()}
     >

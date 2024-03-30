@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const GotoXY = ({comp_id}) => {
+const GotoXY = ({componentId}) => {
   const [state, setState] = useState({
     goto_x: 0,
     goto_y: 0,
@@ -40,7 +40,7 @@ const GotoXY = ({comp_id}) => {
           />
         </div>
         <div
-          id={comp_id}
+          id={componentId}
           className="flex bg-red-600 text-white px-2 py-1 mt-3 mb-1 text-sm cursor-pointer"
           onClick={() => gotoXY()}
         >

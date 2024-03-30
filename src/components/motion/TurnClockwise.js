@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-const TurnClockWise = ({comp_id}) => {
+const TurnClockWise = ({componentId}) => {
   const [angle, setAngle] = useState(0);
 
   const handleClick =  ()=>{
@@ -23,7 +23,7 @@ const TurnClockWise = ({comp_id}) => {
           />
         </div>
         <div
-          id={comp_id}
+          id={componentId}
           className={`flex bg-red-600 text-white px-2 py-1 mt-3 mb-1 text-sm cursor-pointer`}
           onClick={() => handleClick()}
         >

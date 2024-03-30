@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // Move Component for Sidebar
-const Move = ({ comp_id }) => {
+const Move = ({ componentId }) => {
   const [stepInX, setStepInX] = useState(0);
   const handleClick = () => {
     const element = document.getElementById("catSprite");
@@ -12,7 +12,7 @@ const Move = ({ comp_id }) => {
   };
 
   return (
-    <div id={comp_id} className="w-full cursor-pointer p-2 text-center" onClick={handleClick}>
+    <div id={componentId} className="w-full cursor-pointer p-2 text-center" onClick={handleClick}>
       Move
       <span className="bg-white text-black rounded-full m-1 text-center"> 15 </span> Step in
       X{" "}

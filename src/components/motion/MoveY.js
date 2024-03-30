@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const MoveY = ({comp_id}) => {
+const MoveY = ({componentId}) => {
   const [stepInY, setStepInY] = useState(0);
   const handleClick =  ()=>{
     const element = document.getElementById("catSprite");
@@ -10,7 +10,7 @@ const MoveY = ({comp_id}) => {
   }
   
   return (
-    <div id={comp_id} className="w-full cursor-pointer p-2 text-center" onClick={handleClick}>
+    <div id={componentId} className="w-full cursor-pointer p-2 text-center" onClick={handleClick}>
       Move
       <span className="bg-white text-black rounded-full m-1 text-center"> 15 </span> Step in
       Y{" "}

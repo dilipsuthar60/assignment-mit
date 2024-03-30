@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SayMessageInTime = ({comp_id}) => {
+const SayMessageInTime = ({componentId}) => {
   const displayMessage = () => {
     const element = document.getElementById("message-box");
     element.style.display = "block";
@@ -13,7 +13,7 @@ const SayMessageInTime = ({comp_id}) => {
   };
   return (
         <div
-          id={comp_id}
+          id={componentId}
           className=" w-full cursor-pointer p-2 text-center bg-yellow-400 text-black px-2 py-1 my-2 text-sm"
           onClick={() => displayMessage()}
         >
