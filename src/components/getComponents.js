@@ -27,6 +27,6 @@ export const getComponent = (key, id) => {
     case "SAY_HELLO_MESSAGE_2_SECOND":
       return <SayMessageInTime componentId={id}/>    
     default:
-      return React.null;
+      return null;
   }
 };
