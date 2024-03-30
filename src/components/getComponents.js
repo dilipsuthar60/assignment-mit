@@ -1,5 +1,5 @@
 import React from "react";
-import Move from "./motion/Move";
+import MoveX from "./motion/MoveX";
 import TurnAntiClockwise from "./motion/TurnAntiClockwise";
 import TurnClockwise from "./motion/TurnClockwise";
 import GotoXY from "./motion/Goto";
@@ -13,8 +13,8 @@ export const getComponent = (key, id) => {
   switch (key) {
     case "MOVE_Y":
       return <MoveY componentId={id} />;
-    case "MOVE":
-      return <Move componentId={id} />;
+    case "MOVE_X":
+      return <MoveX componentId={id} />;
 
     case "TURN_CLOCKWISE":
       return <TurnClockwise componentId={id} />;

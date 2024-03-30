@@ -1,5 +1,5 @@
 export const motionComponents = [
-    "MOVE",
+    "MOVE_X",
     "MOVE_Y",
     "TURN_CLOCKWISE",
     "TURN_ANTI_CLOCKWISE",

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // Move Component for Sidebar
-const Move = ({ componentId }) => {
+const MoveX = ({ componentId }) => {
   const [stepInX, setStepInX] = useState(15);
   const handleClick = () => {
     const element = document.getElementById("catSprite");
@@ -28,4 +28,4 @@ const Move = ({ componentId }) => {
   );
 };
 
-export default Move;
+export default MoveX;
