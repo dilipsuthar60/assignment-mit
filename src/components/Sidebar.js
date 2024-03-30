@@ -56,7 +56,7 @@ export default function Sidebar() {
                 <Draggable
                   key={`${x}-sideArea`}
                   draggableId={`${x}-sideArea`}
-                  index={i}
+                  index={i + motionComponents.length}
                 >
                   {(provided) => (
                     <li

@@ -1,19 +1,29 @@
 import React, { useState } from "react";
 
 const MoveY = ({componentId}) => {
-  const [stepInY, setStepInY] = useState(0);
+  const [stepInY, setStepInY] = useState(15);
   const handleClick =  ()=>{
     const element = document.getElementById("catSprite");
+    var top = element.offsetTop - 41;
+    console.log(top)
     element.style.position = "relative";
-    element.style.top = 15 + stepInY + "px";
-    setStepInY((prev) => prev + 15);
+    element.style.top = top + stepInY + "px";
   }
   
   return (
-    <div id={componentId} className="w-full cursor-pointer p-2 text-center" onClick={handleClick}>
-      Move
-      <span className="bg-white text-black rounded-full m-1 text-center"> 15 </span> Step in
-      Y{" "}
+    <div
+      id={componentId}
+      className={`text-center rounded text-white p-2  text-sm cursor-pointer mx-auto`}
+      onClick={() => handleClick()}
+    >
+      Move X{" "}
+      <input
+        type="number"
+        className="text-black text-center w-16 mx-2"
+        value={stepInY}
+        onChange={(e) => setStepInY(parseInt(e.target.value))}
+      />{" "}
+      steps
     </div>
   );
 };

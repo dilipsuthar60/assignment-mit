@@ -8,10 +8,10 @@ export default function App() {
   const [midAreaTaskList, setmidAreaTaskList] = useState([]);
   const onDragEnd = (result) => {
     const { source, destination,draggableId } = result;
+    console.log(result)
     if (!destination) return;
     if (
-      destination.droppableId == source.droppableId &&
-      destination.index == source.index
+      destination.droppableId == source.droppableId
     )
       return;
     let componentKey = draggableId.split("-")[0];

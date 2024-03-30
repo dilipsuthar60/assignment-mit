@@ -6,6 +6,8 @@ import GotoXY from "./motion/Goto";
 import MoveY from "./motion/MoveY";
 import SayMessage from "./look/SayMessage";
 import SayMessageInTime from "./look/SayMessageInTime";
+import ThinkMessage from "./look/ThinkMessage";
+import ThinkMessageInTime from "./look/thinkMessageInTime";
 
 export const getComponent = (key, id) => {
   switch (key) {
@@ -22,10 +24,14 @@ export const getComponent = (key, id) => {
 
     case "GOTO_XY":
       return <GotoXY componentId={id} />;
-    case "SAY_MESSAGE":
+    case "SAY_HELLO_MESSAGE":
       return <SayMessage componentId={id}/>
-    case "SAY_HELLO_MESSAGE_2_SECOND":
+    case "SAY_HELLO_MESSAGE_SECOND":
       return <SayMessageInTime componentId={id}/>    
+    case "THINK_HELLO_MESSAGE":
+      return <ThinkMessage componentId={id}/>
+    case "THINK_HELLO_MESSAGE_SECOND":
+      return <ThinkMessageInTime componentId={id}/>
     default:
       return null;
   }

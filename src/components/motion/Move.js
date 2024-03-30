@@ -2,20 +2,28 @@ import React, { useState } from "react";
 
 // Move Component for Sidebar
 const Move = ({ componentId }) => {
-  const [stepInX, setStepInX] = useState(0);
+  const [stepInX, setStepInX] = useState(15);
   const handleClick = () => {
     const element = document.getElementById("catSprite");
-    console.log(element)
+    let left = element.offsetLeft - 916;
     element.style.position = "relative";
-    element.style.left = 15 + stepInX + "px";
-    setStepInX((prev) => prev + 15);
+    element.style.left =left+ stepInX + "px";
   };
 
   return (
-    <div id={componentId} className="w-full cursor-pointer p-2 text-center" onClick={handleClick}>
-      Move
-      <span className="bg-white text-black rounded-full m-1 text-center"> 15 </span> Step in
-      X{" "}
+    <div
+      id={componentId}
+      className={`text-center rounded text-white p-2  text-sm cursor-pointer mx-auto`}
+      onClick={() => handleClick()}
+    >
+      Move X{" "}
+      <input
+        type="number"
+        className="text-black text-center w-16 mx-2"
+        value={stepInX}
+        onChange={(e) => setStepInX(parseInt(e.target.value))}
+      />{" "}
+      steps
     </div>
   );
 };
