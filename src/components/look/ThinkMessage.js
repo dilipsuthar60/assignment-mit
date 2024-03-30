@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 
 const ThinkMessage = ({componentId}) => {
-  const [message, setMessage] = useState("hello");
+  const [message, setMessage] = useState("Hmmm..");
   const displayMessage = () => {
     const element = document.getElementById("message-box");
     const element1 = document.getElementById("message-box-1");
