@@ -22,6 +22,7 @@ const MoveX = ({ componentId }) => {
         className="text-black text-center w-16 mx-2"
         value={stepInX}
         onChange={(e) => setStepInX(parseInt(e.target.value))}
+        onClick={(e) => e.stopPropagation()} 
       />{" "}
       steps
     </div>

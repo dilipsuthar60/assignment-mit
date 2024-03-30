@@ -1,23 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Sidebar from "./components/Sidebar";
 import MidArea from "./components/MidArea";
 import PreviewArea from "./components/PreviewArea";
 import { DragDropContext } from "react-beautiful-dnd";
+import { ListContext } from "./context/MidListArea";
 
 export default function App() {
-  const [midAreaTaskList, setmidAreaTaskList] = useState([]);
+  const context = useContext(ListContext);
+  console.log(context);
   const onDragEnd = (result) => {
-    const { source, destination,draggableId } = result;
-    console.log(result)
+    const { source, destination, draggableId } = result;
+    console.log(result);
     if (!destination) return;
-    if (
-      destination.droppableId == source.droppableId
-    )
-      return;
+    if (destination.droppableId == source.droppableId) return;
     let componentKey = draggableId.split("-")[0];
     if (destination.droppableId == "mid-area") {
-      midAreaTaskList.splice(source.index,1);
-      setmidAreaTaskList([...midAreaTaskList, componentKey]);
+      context.TaskList.splice(source.index, 1);
+      context.setTaskList([...context.TaskList, componentKey]);
     }
   };
   return (
@@ -26,7 +25,7 @@ export default function App() {
         <div className="h-screen overflow-hidden flex flex-row  ">
           <div className="flex-1 h-screen overflow-hidden flex flex-row bg-white border-t border-r border-gray-200 rounded-tr-xl mr-2">
             <Sidebar />
-            <MidArea midAreaTaskList={midAreaTaskList} />
+            <MidArea />
           </div>
           <div className="w-1/3 h-screen overflow-hidden flex flex-row bg-white border-t border-l border-gray-200 rounded-tl-xl ml-2">
             <PreviewArea />

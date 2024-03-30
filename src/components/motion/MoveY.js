@@ -16,12 +16,13 @@ const MoveY = ({componentId}) => {
       className={`text-center rounded text-white p-2  text-sm cursor-pointer mx-auto`}
       onClick={() => handleClick()}
     >
-      Move X{" "}
+      Move Y{" "}
       <input
         type="number"
         className="text-black text-center w-16 mx-2"
         value={stepInY}
         onChange={(e) => setStepInY(parseInt(e.target.value))}
+        onClick={(e) => e.stopPropagation()} 
       />{" "}
       steps
     </div>

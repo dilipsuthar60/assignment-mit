@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Draggable, Droppable } from "react-beautiful-dnd";
 import { getComponent } from "./getComponents";
+import { ListContext } from "../context/MidListArea";
 
-export default function MidArea({ midAreaTaskList }) {
+export default function MidArea() {
+  const { TaskList } = useContext(ListContext);
+
   const doSomeTask = async (element) => {
     console.log("Task started.");
     element.click();
@@ -10,11 +13,11 @@ export default function MidArea({ midAreaTaskList }) {
     console.log("Task completed.");
   };
 
-  const runTask = async() => {
-    if (midAreaTaskList.length == 0) alert("Need at least one Task");
-    for (let i = 0; i < midAreaTaskList.length; i++) {
-      const element = document.getElementById(midAreaTaskList[i]);
-      await doSomeTask(element)
+  const runTask = async () => {
+    if (TaskList.length == 0) alert("Need at least one Task");
+    for (let i = 0; i < TaskList.length; i++) {
+      const element = document.getElementById(TaskList[i]);
+      await doSomeTask(element);
     }
   };
   return (
@@ -38,7 +41,7 @@ export default function MidArea({ midAreaTaskList }) {
                       Run Task
                     </button>
                   </div>
-                  {midAreaTaskList.map((x, i) => {
+                  {TaskList.map((x, i) => {
                     let componentKey = `${x}`;
                     return (
                       <Draggable
