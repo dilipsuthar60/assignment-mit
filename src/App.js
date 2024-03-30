@@ -7,8 +7,9 @@ import { DragDropContext } from "react-beautiful-dnd";
 export default function App() {
   const [midAreaTaskList, setmidAreaTaskList] = useState([])
   const onDragEnd =(result)=>{
-    if(!result?.draggableId) return 
-    let componentKey = result?.draggableId?.split("-")[0];
+    const {draggableId} = result
+    if(!draggableId) return 
+    let componentKey =draggableId.split("-")[0];
     if(result.destination.droppableId == "mid-area"){
       setmidAreaTaskList([...midAreaTaskList,componentKey])
     }
