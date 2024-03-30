@@ -8,7 +8,6 @@ const GotoXY = ({comp_id}) => {
     
   const gotoXY = () => {
     const element = document.getElementById("catSprite");
-    console.log(state,element)
     element.style.position = "relative";
     element.style.left = state.goto_x + "px";
     element.style.top = state.goto_y + "px";
