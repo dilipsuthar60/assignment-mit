@@ -26,7 +26,7 @@ export default function MidArea({ midAreaTaskList }) {
             {(provided) => {
               return (
                 <ul
-                  className={`w-58 h-full`}
+                  className={`w-59 h-full`}
                   {...provided.droppableProps}
                   ref={provided.innerRef}
                 >
