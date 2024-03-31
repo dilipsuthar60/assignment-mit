@@ -8,6 +8,7 @@ import SayMessage from "./look/SayMessage";
 import SayMessageInTime from "./look/SayMessageInTime";
 import ThinkMessage from "./look/ThinkMessage";
 import ThinkMessageInTime from "./look/thinkMessageInTime";
+import HideMessage from "./look/HideMessage";
 
 export const getComponent = (key, id) => {
   switch (key) {
@@ -32,6 +33,8 @@ export const getComponent = (key, id) => {
       return <ThinkMessage componentId={id}/>
     case "THINK_HELLO_MESSAGE_SECOND":
       return <ThinkMessageInTime componentId={id}/>
+    case "HIDE_MESSAGE":
+      return <HideMessage componentId={id}/> 
     default:
       return null;
   }

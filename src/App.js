@@ -7,7 +7,7 @@ import { ListContext } from "./context/MidListArea";
 
 export default function App() {
   const context = useContext(ListContext);
-  console.log(context);
+  // console.log(context);
   const onDragEnd = (result) => {
     const { source, destination, draggableId } = result;
     console.log(result);
