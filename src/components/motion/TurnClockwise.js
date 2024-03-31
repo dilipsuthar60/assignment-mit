@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
+import { ListContext } from "../../context/MidListArea";
+
 const TurnClockWise = ({componentId}) => {
+
+  const context = useContext(ListContext);
   const [angle, setAngle] = useState(0);
 
   const handleClick =  ()=>{
     if(!angle) return
     const element = document.getElementById("cat");
-    console.log(angle,element)
-    element.style.transform = `rotate(${angle}deg)`;
+    element.style.transform = `rotate(${angle+context.clockAngle}deg)`;
+    context.setClockAngle(angle+context.clockAngle)
   }
 
   return (
