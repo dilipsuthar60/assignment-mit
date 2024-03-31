@@ -1,11 +1,9 @@
 import React from "react";
 import CatSprite from "./CatSprite";
-import "../index.css";
-
 
 export default function PreviewArea() {
   return (
-    <div id="catSprite" className="catSprite m-4" >
+    <div id="catSprite" className="transition-all duration-2000 m-4" >
       <div className="absolute">
         <div id="message-and-catsprite-box">
           <div

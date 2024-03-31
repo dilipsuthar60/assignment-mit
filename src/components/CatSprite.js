@@ -1,9 +1,8 @@
 import React from "react";
-import "../index.css";
 
 export default function CatSprite() {
   return (
-    <div id="cat" className="inline-block z-0 catSprite" >
+    <div id="cat" className="inline-block z-0 transition-all duration-2000" >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="95.17898101806641"

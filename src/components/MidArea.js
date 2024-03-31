@@ -9,7 +9,7 @@ export default function MidArea() {
   const doSomeTask = async (element) => {
     console.log("Task started.");
     element.click();
-    await new Promise((resolve) => setTimeout(resolve, 2150));
+    await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log("Task completed.");
   };
 
