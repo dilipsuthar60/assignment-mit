@@ -59,7 +59,7 @@ export default function MidArea() {
                 }
                 </>
               :
-              <div className="w-60 text-center rounded bg-red-500 p-2 my-3">
+              <div style={{width:"44%"}} className="w-60 text-center rounded bg-red-500 p-2 my-3">
               <Droppable droppableId="mid-area" type="COMPONENTS">
                 {(provided) => {
                   return (
