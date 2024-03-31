@@ -3,13 +3,13 @@ import React,{useState} from 'react'
 const ThinkMessage = ({componentId}) => {
   const [message, setMessage] = useState("Hmmm..");
   const displayMessage = () => {
-    const element = document.getElementById("message-box");
-    const element1 = document.getElementById("message-box-1");
+    const element1 = document.getElementById("message-box");
+    const element2 = document.getElementById("message-box-1");
     element1.style.display = "block";
     element1.style.position = "relative";
-    element.style.display = "block";
-    element.style.position = "relative";
-    element.innerHTML = message;
+    element2.style.display = "block";
+    element2.style.position = "relative";
+    element1.innerHTML = message;
   };
   return (
     <div

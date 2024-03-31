@@ -9,6 +9,7 @@ export const motionComponents = [
   export const looksComponents = [
     "SAY_HELLO_MESSAGE",
     "SAY_HELLO_MESSAGE_SECOND",
+    "HIDE_MESSAGE",
     "THINK_HELLO_MESSAGE",
     "THINK_HELLO_MESSAGE_SECOND"
   ];

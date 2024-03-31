@@ -4,13 +4,17 @@ const ThinkMessageInTime = ({componentId}) => {
   const [message, setMessage] = useState("Hmmm..")
   const [second, setSecond] = useState(2)
   const displayMessage = () => {
-    const element = document.getElementById("message-box");
-    element.style.display = "block";
-    element.style.position = "relative";
-    element.innerHTML = message;
+    const element1 = document.getElementById("message-box");
+    const element2 =document.getElementById("message-box-1");
+    element1.style.display = "block";
+    element1.style.position = "relative";
+    element2.style.display = "block";
+    element2.style.position = "relative";
+    element1.innerHTML = message;
     setTimeout(()=>{
-      element.innerHTML= ""
-      element.style.display ="none"
+      element1.innerHTML= ""
+      element1.style.display ="none"
+      element2.style.display = "none"
     },second*1000);
   };
 
