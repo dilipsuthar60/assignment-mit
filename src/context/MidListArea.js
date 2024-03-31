@@ -6,6 +6,7 @@ export const ListProvider = (props) => {
   const [TaskList, setTaskList] = useState([]);
   const [clockAngle, setClockAngle] = useState(0);
   const [antiClockAngle, setAntiClockAngle] = useState(0);
+  const [historyLists, sethistoryLists] = useState([]);
   return (
     <ListContext.Provider
       value={{
@@ -15,6 +16,8 @@ export const ListProvider = (props) => {
         setClockAngle,
         antiClockAngle,
         setAntiClockAngle,
+        historyLists,
+        sethistoryLists,
       }}
     >
       {props.children}
