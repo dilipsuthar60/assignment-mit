@@ -14,7 +14,7 @@ export default function App() {
       context.setTaskList([...context.TaskList]);
       return;
     }
-    console.log(result);
+    
     if (destination.droppableId == source.droppableId) return;
     let componentKey = draggableId.split("-")[0];
     if (destination.droppableId == "mid-area") {

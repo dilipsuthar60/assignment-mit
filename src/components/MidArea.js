@@ -8,10 +8,8 @@ export default function MidArea() {
   const [showHistory, setShowHistory] = useState(false);
  
   const doSomeTask = async (element) => {
-    console.log("Task started.");
     element.click();
-    await new Promise((resolve) => setTimeout(resolve, 2150));
-    console.log("Task completed.");
+    await new Promise((resolve) => setTimeout(resolve, 1800));
   };
  
   const runTask = async () => {
