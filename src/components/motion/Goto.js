@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 
 const GotoXY = ({componentId}) => {
-  const [state, setState] = useState({
-    goto_x: 0,
-    goto_y: 0,
+  const [step, setStep] = useState({
+    x: 0,
+    y: 0,
   });
     
-  const gotoXY = () => {
+  const handleGoto = () => {
     const element = document.getElementById("catSprite");
     element.style.position = "relative";
-    element.style.left = state.goto_x + "px";
-    element.style.top = state.goto_y + "px";
+    element.style.left = step.x + "px";
+    element.style.top = step.y + "px";
   };
 
   return (
@@ -20,10 +20,9 @@ const GotoXY = ({componentId}) => {
           <input
             className="mx-2 p-1 py-0 text-center text-black"
             type="number"
-            value={state.goto_x}
+            value={step.x}
             onChange={(e) => {
-              parseInt(e.target.value) !== 0 &&
-                setState({ ...state, goto_x: parseInt(e.target.value)});
+                setStep({ ...step, x: parseInt(e.target.value)});
             }}
           />
         </div>
@@ -32,20 +31,19 @@ const GotoXY = ({componentId}) => {
           <input
             className="mx-2 p-1 py-0 text-center text-black"
             type="number"
-            value={state.goto_y}
+            value={step.y}
             onChange={(e) => {
-              parseInt(e.target.value) !== 0 &&
-                setState({ ...state, goto_y: parseInt(e.target.value)});
+                setStep({ ...step, y: parseInt(e.target.value)});
             }}
           />
         </div>
         <div
           id={componentId}
           className="flex bg-red-600 text-white px-2 py-1 mt-3 mb-1 text-sm cursor-pointer"
-          onClick={() => gotoXY()}
+          onClick={() => handleGoto()}
         >
           <div className="flex mx-auto">
-          Go to X : {state.goto_x} Y : {state.goto_y}
+          Go to X : {step.x }  Y : {step.y}
           </div>
         </div>
       </div>
