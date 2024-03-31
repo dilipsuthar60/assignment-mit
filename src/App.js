@@ -7,11 +7,14 @@ import { ListContext } from "./context/MidListArea";
 
 export default function App() {
   const context = useContext(ListContext);
-  // console.log(context);
   const onDragEnd = (result) => {
     const { source, destination, draggableId } = result;
+    if (source.droppableId == "mid-area" && !destination) {
+      context.TaskList.splice(source.index, 1);
+      context.setTaskList([...context.TaskList]);
+      return;
+    }
     console.log(result);
-    if (!destination) return;
     if (destination.droppableId == source.droppableId) return;
     let componentKey = draggableId.split("-")[0];
     if (destination.droppableId == "mid-area") {
