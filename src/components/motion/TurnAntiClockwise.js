@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState ,useContext} from "react";
+import { ListContext } from "../../context/MidListArea";
+
 const TurnAntiClockWise = ({componentId}) => {
+  
   const [angle, setAngle] = useState(0);
+  const context = useContext(ListContext);
+
   const handleClick =  ()=>{
     if(!angle) return
     const element = document.getElementById("cat");
-    console.log(angle,element)
-    element.style.transform = `rotate(${-1*angle}deg)`;
+    element.style.transform = `rotate(${-1*(angle+context.antiClockAngle)}deg)`;
+    context.setAntiClockAngle(angle+context.antiClockAngle)
   }
   return (
     <div className="text-center rounded bg-blue-500 p-2 my-3">
