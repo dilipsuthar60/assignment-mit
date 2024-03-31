@@ -27,7 +27,7 @@ export default function MidArea() {
   return (
     <div className="flex-1 h-full overflow-auto">
       <div className="text-center text-white">
-        <div className="bg-red-500 p-2">Mid Area</div>
+        <div className="bg-red-500 p-2 font-bold">Mid Area</div>
           <div className="text-center m-2">
             <button
               onClick={()=>setShowHistory(!showHistory)}
