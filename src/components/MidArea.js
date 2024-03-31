@@ -24,7 +24,7 @@ export default function MidArea() {
     <div className="flex-1 h-full overflow-auto">
       <div className="text-center m-2">
         <span className="bg-slate-400">Mid Area</span>
-        <div className="w-60 p-2 text-center rounded bg-red-500 p-2 my-3">
+        <div className="p-2 text-center rounded bg-red-500 p-2 my-3" style={{width:"43%"}}>
           <Droppable droppableId="mid-area" type="COMPONENTS">
             {(provided) => {
               return (
