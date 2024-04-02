@@ -24,7 +24,7 @@ const MoveX = ({ componentId }) => {
         className="text-black text-center w-16 mx-2"
         value={stepInX}
         onChange={(e) => {
-          if (e.target.value != 0) setStepInX(parseInt(e.target.value));
+          if (e.target.value) setStepInX(parseInt(e.target.value));
         }}
         onClick={(e) => e.stopPropagation()}
       />{" "}

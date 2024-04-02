@@ -22,7 +22,7 @@ const MoveY = ({ componentId }) => {
         type="number"
         className="text-black text-center w-16 mx-2"
         value={stepInY}
-        onChange={(e) => setStepInY(parseInt(e.target.value))}
+        onChange={(e) =>{if (e.target.value) setStepInY(parseInt(e.target.value))}}
         onClick={(e) => e.stopPropagation()}
       />{" "}
       steps
