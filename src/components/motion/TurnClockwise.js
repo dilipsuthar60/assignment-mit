@@ -3,7 +3,7 @@ import { ListContext } from "../../context/MidListArea";
 
 const TurnClockWise = ({ componentId }) => {
   const context = useContext(ListContext);
-  const [angle, setAngle] = useState(0);
+  const [angle, setAngle] = useState(45);
 
   const handleClick = () => {
     if (!angle) return;
@@ -21,7 +21,7 @@ const TurnClockWise = ({ componentId }) => {
           type="number"
           value={angle}
           onChange={(e) => {
-            setAngle(parseInt(e.target.value));
+            if (e.target.value) setAngle(parseInt(e.target.value));
           }}
         />
       </div>

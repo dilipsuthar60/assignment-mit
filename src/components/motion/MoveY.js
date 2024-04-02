@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { ListContext } from "../../context/MidListArea";
 
-const MoveY = ({componentId}) => {
+const MoveY = ({ componentId }) => {
   const [stepInY, setStepInY] = useState(15);
-  const handleClick =  ()=>{
+  const context = useContext(ListContext);
+  const handleClick = () => {
     const element = document.getElementById("catSprite");
-    var top = element.offsetTop - 41;
-    console.log(top)
     element.style.position = "relative";
-    element.style.top = top + stepInY + "px";
-  }
-  
+    element.style.top = context.stepY + stepInY + "px";
+    context.setStepY(stepInY + context.stepY);
+  };
+
   return (
     <div
       id={componentId}
@@ -22,7 +23,7 @@ const MoveY = ({componentId}) => {
         className="text-black text-center w-16 mx-2"
         value={stepInY}
         onChange={(e) => setStepInY(parseInt(e.target.value))}
-        onClick={(e) => e.stopPropagation()} 
+        onClick={(e) => e.stopPropagation()}
       />{" "}
       steps
     </div>
